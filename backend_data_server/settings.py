@@ -123,6 +123,21 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, STATIC_URL),
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+  "https://localhost:8000",
+  "http://127.0.0.1:8000"
+]
+
+ALLOWED_HOSTS = [
+  "*",
+]
 
 # API externa (JSONPlaceholder) utilizada por la app dashboard
 API_URL = 'https://jsonplaceholder.typicode.com/posts'
+# Fallo: acceso sin autenticación
+LOGIN_URL = '/login/'
+# Éxito: luego de autenticación exitosa
+LOGIN_REDIRECT_URL = '/'
+
+# Redirección luego de cerrar sesión
+LOGOUT_REDIRECT_URL = '/login/'
